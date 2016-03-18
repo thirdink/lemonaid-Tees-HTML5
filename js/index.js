@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $('.responsive').slick({
-        dots: true,
+        //dots: true,
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -22,7 +22,7 @@ $(document).ready(function() {
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 2,
-                dots: true,
+                //dots: true,
                 infinite: true,
 
             }
@@ -33,7 +33,7 @@ $(document).ready(function() {
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
-                dots: true,
+                //dots: true,
                 infinite: true,
 
             }
@@ -42,10 +42,10 @@ $(document).ready(function() {
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                dots: true,
+                //dots: true,
                 infinite: true,
                 autoplay: true,
-                autoplaySpeed: 2000,
+                autoplaySpeed: 4000,
             }
         }]
     });
