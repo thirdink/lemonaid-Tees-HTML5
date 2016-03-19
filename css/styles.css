@@ -86,7 +86,7 @@ hr {
 }
 
 p {
-  margin:0px 0px 15px 0px;
+  margin:0px 0px 0px 0px;
 }
 
 select {
@@ -1939,7 +1939,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 /* --------------------------------------------------------	*/
 /*  Login  */
 /* --------------------------------------------------------	*/
-
+.loginHere{
+	height:44px;
+}
 .login .form-group {
   margin-bottom:20px;
 }
@@ -2381,7 +2383,11 @@ ul.payment_methods {
 .form-row .label {
 	padding: 3px 20px;
 }
-
+.billing2 {
+	padding-left: 115px;
+	height: 481px;
+  width: 434px;
+}
 /* --------------------------------------------------------	*/
 /*  Comments  */
 /* --------------------------------------------------------	*/
