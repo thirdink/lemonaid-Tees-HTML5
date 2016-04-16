@@ -2,55 +2,55 @@
 jQuery('html').removeClass('no-js').addClass('js');
 
 // Add .osx class to html if on Os/x
-if ( navigator.appVersion.indexOf("Mac")!=-1 ) 
+if ( navigator.appVersion.indexOf("Mac")!=-1 )
 	jQuery('html').addClass('osx');
 
 // When DOM is fully loaded
 jQuery(document).ready(function($) {
   "use strict";
-               
-/* --------------------------------------------------------	
+
+/* --------------------------------------------------------
 	 External Links
-   --------------------------------------------------------	*/	
+   --------------------------------------------------------	*/
 
 	  $(window).load(function() {
-			$('a[rel=external]').attr('target','_blank');	
+			$('a[rel=external]').attr('target','_blank');
 		});
 
-/* --------------------------------------------------------	
+/* --------------------------------------------------------
 	 Tooltips
-   --------------------------------------------------------	*/	
+   --------------------------------------------------------	*/
 
     $('body').tooltip({
         delay: { show: 300, hide: 0 },
         selector: '[data-toggle=tooltip]:not([disabled])'
     });
-    
-/* --------------------------------------------------------	
+
+/* --------------------------------------------------------
 	 Inc Dec
-   --------------------------------------------------------	*/	
-    
+   --------------------------------------------------------	*/
+
     $(function() {
-      $(".inc").click(function() { var $button = $(this); var old = $button.parent().find("input").val(); var newVal = parseFloat(old) + 1; $button.parent().find("input").val(newVal); }); 
-      
-      $(".dec").click(function() { var $button = $(this); var old = $button.parent().find("input").val(); var newVal = parseFloat(old) - 1; $button.parent().find("input").val(newVal); }); 
-    }); 
-    
-/* --------------------------------------------------------	
+      $(".inc").click(function() { var $button = $(this); var old = $button.parent().find("input").val(); var newVal = parseFloat(old) + 1; $button.parent().find("input").val(newVal); });
+
+      $(".dec").click(function() { var $button = $(this); var old = $button.parent().find("input").val(); var newVal = parseFloat(old) - 1; $button.parent().find("input").val(newVal); });
+    });
+
+/* --------------------------------------------------------
 	 Dynamic Progress Bar
    --------------------------------------------------------	*/
 
-    $(window).load(function(){    
+    $(window).load(function(){
       $('.progress-bar').css('width',  function(){ return ($(this).attr('data-percentage')+'%')});
     });
 
-/* --------------------------------------------------------	
+/* --------------------------------------------------------
 	 Back To Top Button
-   --------------------------------------------------------	*/	
+   --------------------------------------------------------	*/
 
   // hide #back-top first
 	$(".back-to-top").hide();
-	
+
 	// fade in #back-top
 	$(function () {
 		$(window).scroll(function () {
@@ -70,27 +70,27 @@ jQuery(document).ready(function($) {
 		});
 	});
 
-/* --------------------------------------------------------	
+/* --------------------------------------------------------
 	 Fixed Menu
-   --------------------------------------------------------	*/	
+   --------------------------------------------------------	*/
 
   $('.navbar').sticky({topSpacing:0});
 
-/* --------------------------------------------------------	
+/* --------------------------------------------------------
 	 Move Nav
    --------------------------------------------------------	*/
 
-  $(window).scroll(function(){ 
-    if ($(this).scrollTop() > 50){ 
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 50){
       $('.navbar').addClass("navbar-move");
-    } 
+    }
     else{
       $('.navbar').removeClass("navbar-move");
     }
   });
-  
-/* --------------------------------------------------------	
-	 Mobile Menu 
+
+/* --------------------------------------------------------
+	 Mobile Menu
    --------------------------------------------------------	*/
 
   selectnav('nav', {
@@ -99,11 +99,11 @@ jQuery(document).ready(function($) {
     indent: '-'
   });
 
-/* --------------------------------------------------------	
+/* --------------------------------------------------------
 	 Isotope
    --------------------------------------------------------	*/
-  $(window).load(function() {   
-                       
+  $(window).load(function() {
+
     $('.portfolio-mansonry-container').isotope({
         itemSelector: '.portfolio-masonry-item',
         layoutMode: 'masonry',
@@ -125,16 +125,16 @@ jQuery(document).ready(function($) {
             filter: selector
         });
         $(this).closest('.filter').children('li').removeClass('active');
-        $(this).parent('li').addClass('active'); 
+        $(this).parent('li').addClass('active');
     });
   });
 
-/* --------------------------------------------------------	
+/* --------------------------------------------------------
 	 Countdown
    --------------------------------------------------------	*/
 
   $(function() {
-  
+
     $('.countdown').countdown({
       date: "october 04, 2014 15:00:00",
       render: function(data) {
@@ -149,7 +149,7 @@ jQuery(document).ready(function($) {
 
   });
 
-/* --------------------------------------------------------	
+/* --------------------------------------------------------
 	 Magnific Popup
    --------------------------------------------------------	*/
 
@@ -173,12 +173,12 @@ jQuery(document).ready(function($) {
   		}
   	});
 
-/* --------------------------------------------------------	
-	 Gallery (Projects) 
-   --------------------------------------------------------	*/	
-  
+/* --------------------------------------------------------
+	 Gallery (Projects)
+   --------------------------------------------------------	*/
+
   (function() {
-   
+
     $(window).load(function(){
     	// container
     	var $container = $('#portfolio-items');
@@ -208,7 +208,7 @@ jQuery(document).ready(function($) {
     		  // options...
     		  itemSelector : '.project',
     		  layoutMode   : 'fitRows'
-    		});    
+    		});
     		// filter items
     		$('#portfolio-filter li a').click(function(){
     			var selector = $(this).attr('data-filter');
@@ -221,27 +221,27 @@ jQuery(document).ready(function($) {
     			filter_projects( '.' + window.location.hash.replace('#','') );
     		}
     	}
-      
+
     })
 
 	})();
-  
-  
-/* --------------------------------------------------------	
-	 Parallax
-   --------------------------------------------------------	*/	
 
-    var detectmob = false;	
+
+/* --------------------------------------------------------
+	 Parallax
+   --------------------------------------------------------	*/
+
+    var detectmob = false;
     if(navigator.userAgent.match(/Android/i)
       || navigator.userAgent.match(/webOS/i)
       || navigator.userAgent.match(/iPhone/i)
       || navigator.userAgent.match(/iPad/i)
       || navigator.userAgent.match(/iPod/i)
       || navigator.userAgent.match(/BlackBerry/i)
-      || navigator.userAgent.match(/Windows Phone/i)) {							
+      || navigator.userAgent.match(/Windows Phone/i)) {
         detectmob = true;
     }
-    
+
     if (detectmob === true) {
       $( '.parallax' ).each(function(){
     			$(this).addClass('parallax-mobile');
@@ -251,39 +251,52 @@ jQuery(document).ready(function($) {
         $( '#parallax-one' ).parallax();
         $( '#parallax-two' ).parallax();
         $( '#parallax-three' ).parallax();
-    }  
+    }
 
-/* --------------------------------------------------------	
+/* --------------------------------------------------------
 	 Fitvids
-   --------------------------------------------------------	*/	
+   --------------------------------------------------------	*/
 
     $(window).load(function() {
       $("body").fitVids();
     });
 
 
-/* --------------------------------------------------------	
+/* --------------------------------------------------------
 	 Flex Initialize
-   --------------------------------------------------------	*/	
+   --------------------------------------------------------	*/
 
     $(window).load(function() {
-    
+
       $('.flex-1').flexslider({
         animation: "slide",
         slideshow: true,
         useCSS : false,
-        animationLoop: true 	
+        animationLoop: true
       });
-     
-      jQuery('.flex-1 .flex-direction-nav .flex-next').html('<i class="fa fa-angle-right"></i>');
-      jQuery('.flex-1 .flex-direction-nav .flex-prev').html('<i class="fa fa-angle-left"></i>'); 
 
-    }); 
-                     
-/* --------------------------------------------------------	
+      jQuery('.flex-1 .flex-direction-nav .flex-next').html('<i class="fa fa-angle-right"></i>');
+      jQuery('.flex-1 .flex-direction-nav .flex-prev').html('<i class="fa fa-angle-left"></i>');
+
+    });
+
+		// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    animationLoop: false,
+    itemWidth: 210,
+    itemMargin: 5,
+    minItems: 2,
+    maxItems: 4
+  });
+});
+jQuery('.flexslider .flex-direction-nav .flex-next').html('<i class="fa fa-angle-right"></i>');
+jQuery('.flexslider .flex-direction-nav .flex-prev').html('<i class="fa fa-angle-left"></i>');
+/* --------------------------------------------------------
 	 Contact Form
    --------------------------------------------------------	*/
-	
+
 	$('#send').click(function(){ // when the button is clicked the code executes
 		$('.error').fadeOut('slow'); // reset the error messages (hides them)
 
@@ -294,10 +307,10 @@ jQuery(document).ready(function($) {
     $('#err-name').show(500);
     $('#err-name').delay(4000);
     $('#err-name').animate({
-      height: 'toggle'  
+      height: 'toggle'
     }, 500, function() {
       // Animation complete.
-    }); 
+    });
       error = true; // change the error state to true
 		}
 
@@ -311,36 +324,36 @@ jQuery(document).ready(function($) {
     $('#err-emailvld').show(500);
     $('#err-emailvld').delay(4000);
     $('#err-emailvld').animate({
-      height: 'toggle'  
+      height: 'toggle'
     }, 500, function() {
       // Animation complete.
-    });         
+    });
 			error = true;
 		}
-    
+
 		var message = $('textarea#message2').val(); // get the value of the input field
 		if(message == "" || message == " " || message == "Message") {
 
-      
+
     $('#err-message').show(500);
     $('#err-message').delay(4000);
     $('#err-message').animate({
-      height: 'toggle'  
+      height: 'toggle'
     }, 500, function() {
       // Animation complete.
-    });            
+    });
 			error = true; // change the error state to true
-		} 
+		}
 
 		if(error == true) {
 
     $('#err-form').show(500);
     $('#err-form').delay(4000);
     $('#err-form').animate({
-      height: 'toggle'  
+      height: 'toggle'
     }, 500, function() {
       // Animation complete.
-    });         
+    });
 			return false;
 		}
 
@@ -363,13 +376,13 @@ jQuery(document).ready(function($) {
 			},
 			success: function() {
 
-        
+
     $('#ajaxsuccess').show(500);
     $('#ajaxsuccess').delay(4000);
     $('#ajaxsuccess').animate({
-      height: 'toggle'  
+      height: 'toggle'
     }, 500, function() {
-    });           
+    });
 
         $("#name").val('');
         $("#email").val('');
@@ -379,7 +392,7 @@ jQuery(document).ready(function($) {
 
 		return false; // stops user browser being directed to the php file
 	}); // end click function
-     
+
 
 ////slick slider
 //$(document).ready(function(){
@@ -395,11 +408,3 @@ jQuery(document).ready(function($) {
 
 
 });
-
-
-
-
-
-
-
-    

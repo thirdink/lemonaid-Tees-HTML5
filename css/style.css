@@ -1,5 +1,20 @@
 /* Slider */
-.slick-slider {
+.responsive.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.responsive1.slick-slider {
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -15,7 +30,14 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.slick-list {
+.responsive.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.responsive1.slick-list {
   position: relative;
   overflow: hidden;
   display: block;
@@ -62,11 +84,20 @@
   visibility: hidden;
 }
 
-.slick-slide {
+.responsive.slick-slide {
   float: left;
   height: 100%;
   min-height: 1px;
   display: none;
+
+}
+.responsive1.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+  width: 100px;
+
 }
 .slick-slide img {
   display: block;

@@ -23,7 +23,7 @@ body { font-family: sans-serif; }
 .grid-sizer,
 .grid-item {
   width:33.333% ;
-  padding: 5px 5px;
+  padding: 50px;
 }
 
 .grid-item {
